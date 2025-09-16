@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Path</title>
+</head>
+<body>
+    <div>
+        <h1>📌 File Path System</h1>
+        <ul>
+            <h3>🔑 Big Truth</h3>
+            <ul>
+                <p>
+                    A website is not just one file. <br>
+                    It’s a collection of files:
+                </p>
+                <li>HTML(Structure)</li>
+                <li>CSS(Styling)</li>
+                <li>JavaScript(Logic)</li>
+                <li>Images, Videos, Audios</li>
+                <p>👉 These files live in folders, just like your laptop files.</p>
+            </ul>
+            <hr>
+            <h3>❓ The Problem</h3>
+            <ul>
+                <p>How does index.html know where to find logo.png or style.css? <br>
+
+                    Answer: File Paths = exact address of files.</p>
+            </ul>
+            <hr>
+            <h3>🛤️ Relative File Paths (used 99% of the time)</h3>
+            <ul>
+                <p>
+                    Relative path = start searching from the file you’re currently in. <br>
+
+                    📂 Example Project:
+                </p>
+                <img src="Assets/RelativePath.png" alt="Relative File Path">
+                <hr>
+                <h4>✅ Scenario 1: Same Folder</h4>
+                <p>👉 Linking index.html to about.html</p>
+                <img src="Assets/Sc1.png" alt="Same Folder Linking">
+                <hr>
+                <h4>✅ Scenario 2: Going Down (Sub-Folder)</h4>
+                <p>👉 Using an image inside the images folder</p>
+                <img src="Assets/Sc2.png" alt="sub Folder">
+                <hr>
+                <h4>✅ Scenario 3: Going Up (Parent Folder)</h4>
+                <p>👉 From pages/contact.html to images/logo.png</p>
+                <img src="Assets/Sc3.png" alt="Parent Folder">
+            </ul>
+            <hr>
+            <h3>🌍 Absolute File Paths</h3>
+            <ul>
+                <p>
+                    These give the full address (with http:// or https://). <br>
+                    Use only for external resources.
+                </p>
+                <img src="Assets/AbsoluteFilePath.png" alt="Absolute File Path">
+            </ul>
+            <hr>
+
+            <h3>🛡️ Why Relative Paths are Safer</h3>
+            <ul>
+                <p>
+                    Browsers run in a sandbox (prison). <br>
+                    They protect your computer from bad websites that might try to read your files. <br>
+
+                    So → Always use relative paths for your files. <br>
+                </p>
+            </ul>
+            <hr>
+
+            <h3>📏 Rules of Thumb</h3>
+            <ol>
+                <li>Your Files → Relative paths
+                    <ul>
+                        <li>filename.html (same folder)</li>
+                        <li>folder/filename.html (down)</li>
+                        <li>../filename.html (up)</li>
+                    </ul>
+                </li>
+                <li>
+                    Other Website’s Files → Absolute paths
+                    <ul>
+                        <li>https://example.com/file.png</li>
+                    </ul>
+                </li>
+            </ol>
+            <hr>
+
+            <h3>🖥️ Windows vs macOS/Linux File Paths</h3>
+            <ul>
+                <table border="1">
+                    <caption>Windows vs macOS/Linux File Paths</caption>
+                    <thead>
+                        <tr>
+                        <th>Feature</th>
+                        <th>Windows</th>
+                        <th>macOS/Linux</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>Root</td>
+                        <td>Drive Letter (C:)</td>
+                        <td>Forward Slash /</td>
+                        </tr>
+                        <tr>
+                        <td>Separator</td>
+                        <td>\ (backslash)</td>
+                        <td>/ (forward slash)</td>
+                        </tr>
+                        <tr>
+                        <td>Example</td>
+                        <td>C:\Users\John\Documents\report.docx</td>
+                        <td>/Users/john/Documents/report.docx</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </ul>
+            <hr>
+
+            <h3>🏗️ HTML Boilerplate</h3>
+            <ul>
+                <h4>🧩 Why Needed?</h4>
+                <ul>
+                    <p>
+                        Browsers don’t guess → they need clear instructions. <br>
+                        Boilerplate = starter template with all important info.
+                    </p>
+                </ul>
+                <img src="Assets/BoilerPlate.png" alt="Boiler Plate">
+
+                <h4>🛠️ Explanation</h4>
+                <ol>
+                    <li><!DOCTYPE html> → Tells browser “This is HTML5, use standard rules.”</li>
+                    <li><html lang="en"> → Language of page (important for SEO + accessibility).</li>
+                    <li><head> → Hidden info for browser.</li>
+                    <li><meta charset="UTF-8"> → Correctly shows all symbols (€, ₹, ©).</li>
+                    <li><meta name="viewport"> → Mobile friendly, makes page responsive.</li>
+                    <li> &lt; title &gt; → Title shown in browser tab.</li>
+                    <li> &lt; body &gt; → Actual content (headings, images, text).</li>
+                </ol>
+
+                <h4>🧪 But Websites Work Without Boilerplate?</h4>
+                <ul>
+                    <p>Yes, because browsers are forgiving. They add missing tags automatically. <br>
+                        But… without boilerplate you risk:</p>
+                    <li>❌ Quirks Mode (unpredictable layouts)</li>
+                    <li>❌ Broken characters (€, é, ’)</li>
+                    <li>❌ Bad mobile experience</li>
+                    <li>❌ Poor SEO & accessibility</li>
+                    <p>👉 Boilerplate = strong foundation 🏠</p>
+                </ul>
+            </ul>
+            <hr>
+
+            <h3>📄 Multi-Page Websites</h3>
+            <ul>
+                <p>
+                    Websites are like books → multiple chapters (pages). <br>
+                    Example: Home, About, Contact.
+                </p>
+                <p>
+                    Need two things:
+                    <ol>
+                        <li>Consistent structure (same header & footer).</li>
+                        <li>Navigation links (<a> tags).</li>
+                    </ol>
+                </p>
+            </ul>
+            <hr>
+
+            <h3>📦 &lt;div&gt; – The Box</h3>
+            <ul>
+                <p>Use &lt;div> to group elements together.</p>
+                <img src="Assets/divImg.png" alt="Div image">
+                <p>👉 Now you can style the whole group (border, background).</p>
+            </ul>
+            <hr>
+
+            <h3>🏷️ class & id</h3>
+            <ul>
+                <li>id = unique (like Aadhaar)</li>
+                <li>class = reusable (like Job Title: "Engineer")</li>
+                <p>Example: </p>
+                <img src="Assets/classid.png" alt="Class annd Id">
+            </ul>
+            <hr>
+
+            <h3>✍️ &lt;span> – The Highlighter</h3>
+            <ul>
+                <img src="Assets/span.png" alt="Span Image">
+                <p>👉 Think of <span> as a highlighter pen.</p>
+            </ul>
+            <hr>
+
+            <h3>🧩 Semantic Containers</h3>
+            <ul>
+                <li>&lt;header> → top intro (logo, nav)</li>
+                <li>&lt;footer> → bottom info (copyright, links)</li>
+                <li>&lt;main> → unique page content (only one per page)</li>
+            </ul>
+        </ul>
+        <hr>
+    </div>
+    <footer>
+        <p align="center">
+            <a href="Page3.html">⬅️ Previous</a> |
+            <a href="Page5.html">Next ➡️</a>
+        </p>
+    </footer>
+</body>
+</html>

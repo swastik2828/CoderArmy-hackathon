@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoderArmy Web Development Notes</title>
+</head>
+<body>
+    <div class="heading">
+        <h1>Web Development Course</h1>
+    </div>
+    <div class="main">
+        <div> 
+            <h2>🌍 How Does the Internet Work?</h2> 
+            <p>When we think of the internet, it often feels like magic — type something
+                 into Google and results instantly appear. But in reality, the internet is
+                 just a series of smart, logical solutions to very simple problems. Let’s 
+                 break it down step by step.
+            </p>
+        </div>
+        <hr>
+        <div>
+            <ol>
+                <li><h3>🖥️ Principle 1: The Need to Share Information</h3></li>
+                    <img src="Assets/img1.PNG" alt="Two computers connected" width="400">
+                    <p>Imagine two computers: Computer A and Computer B. 
+                        You have some data on Computer A and want it on Computer B.</p>
+                    <p>The old-fashioned way would be to copy the data onto a USB stick and physically
+                            carry it over. That works, but it’s slow and impractical. Instead, we can connect
+                            the two computers directly using a cable (like ethernet or fiber optic).
+                    </p>
+                    <p>
+                            Once connected, the computers can send signals as 1s and 0s 
+                            (high voltage for 1, low voltage for 0). This is the most basic form of networking
+                            — a direct link between two devices.
+                    </p>
+                    <hr>
+                <li><h3>🌐 Principle 2: The Problem of Scale</h3></li>
+                    <img src="Assets/img2.PNG" alt="Network switch connecting computers" width="400">
+                    <p>
+                        Two computers are easy to connect. But what happens when we have 10, 50, or 100
+                        computers? If each one needed a separate cable to every other computer, the number of cables would explode.
+                    </p>
+                    <p>
+                        The solution is a Switch. Each computer connects to the switch, and the switch forwards data only to the right computer.
+                        This makes communication efficient and organized. This is what we call a Local Area Network (LAN), commonly used in homes
+                        and offices.
+                    </p>
+                    <hr>
+                <li><h3>📡 Principle 3: Connecting Multiple Networks</h3></li>
+                    <img src="Assets/img3.png" alt="Router connecting networks" width="400">
+                    <p>
+                        Now imagine two separate offices, each with its own LAN. How can computers in one office talk to computers in the other?
+                         Running a cable from every machine in one office to every machine in the other is impossible.
+                    </p>
+                    <p>
+                        Here’s where the Router comes in. A router connects one network to another and knows how to send data between them.
+                         By linking many routers together across the world, we create a network of networks. This massive system of connected
+                         networks is what we call the Internet.
+                    </p>
+                    <hr>
+                <li><h3>📍 Principle 4: Finding the Right Computer</h3></li>
+                    <p>
+                        Now that we have millions of devices connected, how does your computer find the one it needs to talk to?
+                    </p>
+                    <p>
+                        Just like houses have unique postal addresses, every device on a network has a unique IP Address. 
+                        For example, 172.217.16.142 is one of Google’s addresses.
+                    </p>
+                    <p>
+                        Routers look at the destination IP address and forward the message step by step, or “hop by hop,” until it reaches the right device.
+                    </p>
+                    <hr>
+                <li><h3>📦 Principle 5: Reliable Data Transfer</h3></li>
+                    <p>
+                        Let’s say you want to send a large video file over the internet. Sending it all at once would slow everything down and be risky
+                         — if even one part got corrupted, you’d have to resend the whole file.
+                    </p>
+                    <p>
+                        The smarter way is to break the data into small, numbered pieces called Packets.
+                         Each packet contains a bit of the data, along with the sender’s IP, the receiver’s IP,
+                          and a sequence number. Packets may travel different routes, but once they reach the destination,
+                           they’re reassembled in the correct order.
+                    </p>
+                    <p>
+                        This system of breaking, sending, and reassembling data is managed by
+                         TCP/IP (Transmission Control Protocol / Internet Protocol) — the backbone of the internet.
+                    </p>
+                </ol>
+                <hr>
+        </div>
+        <div>
+            <h2>🧾 IP Address Basics </h2>
+                <img src="Assets/img4.PNG" alt="Illustration of IP address" width="400">
+            
+                <h3>🔹 IPv4</h3>
+                    <ul>
+                        <li>32-bit number, written as 4 sections (0–255).</li>
+                        <li>Example: 192.168.1.1.</li>
+                        <li>Max: ~4.3 billion addresses.</li>
+                        <li>Problem: Not enough for today’s billions of devices.</li>
+                    </ul>
+                <h3>🔹 Public IP</h3>
+                    <ul>
+                        <li>Your network’s global identity on the internet.</li>
+                        <li>Unique worldwide.</li>
+                        <li>Given by your ISP.</li>
+                        <li>Example: Google servers, Netflix servers, your router.</li>
+                    </ul>
+                <h3>🔹 Private IP</h3>
+                    <ul>
+                        <li>Used inside your local network (home/office).</li>
+                        <li>Not globally unique.</li>
+                        <li>Assigned by your router.</li>
+                        <li>Reserved ranges:
+                            <ul>
+                                <li>10.x.x.x → big networks</li>
+                                <li>172.16.x.x – 172.31.x.x → medium networks</li>
+                                <li>192.168.x.x → home networks</li>
+                            </ul>
+                        </li>
+                    </ul>
+                <h3>🔹 IPv6</h3>
+                    <ul>
+                        <li>128-bit address (solution to IPv4 shortage).</li>
+                        <li>Huge capacity: 2^128 addresses.</li>
+                        <li>Written in hexadecimal with colons.</li>
+                        <li>Example: 2001:0db8:85a3::8a2e:0370:7334.</li>
+                    </ul>
+                <hr>
+        </div>
+        <div>
+            <h2>🏷️ MAC Address</h2>
+            <ul>
+                <img src="Assets/img5.PNG" alt="MAC address example" width="400">
+
+                <p>
+                    Every device capable of connecting to a network has a permanent,
+                    built-in identifier called a MAC Address. Unlike IPs (which can change), MAC addresses are fixed.
+                </p>
+                <p>
+                    They’re usually written in hexadecimal format, like: <br>
+                    3C:22:FB:A3:B4:C5
+                </p>
+                <p>
+                    Think of it like your device’s fingerprint — unique and unchangeable.
+                </p>
+            </ul>
+            <hr>
+        </div>
+        <div>
+            <h2>🌐 Port Numbers – The Doors of Networking</h2>
+            <ul>
+                <img src="Assets/img6.png" alt="Port numbers concept" width="400">
+
+                <p>
+                    Think of your computer like a huge apartment building. The IP address is like the street address of the building – it tells people where the building is.
+                </p>
+                <p>
+                But inside that building, there are thousands of rooms where different activities happen – chatting, browsing, gaming, streaming, etc. These rooms are identified by Port Numbers.
+            </p>
+            <p>
+                👉 In short: <br>
+                IP Address = Building Address <br>
+                Port Number = Room Number
+            </p>
+            <p>
+                So when you connect to a website, you’re not just finding the right building (IP address), you’re also knocking on the right door (port number) so the correct service answers you.
+            </p>
+            <p>
+                💡 A port number is always between 0 and 65535 (that’s because it’s stored in 16 bits).
+            </p>
+            
+                <hr>
+                <h3>🏷️ Categories of Port Numbers</h3>
+                <p>The internet authorities divided ports into 3 groups to keep things organized:</p>
+                <ol>
+                    <li><h4>Well-Known Ports (0 – 1023)</h4></li>
+                    <ul>
+                        <p>
+                            These are the VIP doors – reserved for the most important services. <br>
+                            For example:
+                        </p>
+                        <ul>
+                            <li>80 → HTTP (websites)</li>
+                            <li>443 → HTTPS (secure websites)</li>
+                            <li>22 → SSH (logging into servers)</li>
+                            <li>53 → DNS (domain name lookups)</li>
+                        </ul>
+                        ⚠️ On most systems, only administrators can open these ports. 
+                    </ul>
+                    <li><h4>Registered Ports (1024 – 49151)</h4></li>
+                    <ul>
+                        <p>
+                            These are the common doors used by apps and databases. They are widely used but not as “global standards” as the first group.
+                        </p>
+                        <p>Examples a developer should know:</p>
+                        <ul>
+                            <li>3000 → React / Node.js development server</li>
+                            <li>3306 → MySQL database</li>
+                            <li>27017 → MongoDB (MERN stack)</li>
+                            <li>8080 → Alternate web server port</li>
+                        </ul>
+                        <p>
+                            Good news: you don’t need admin rights to use these ports.
+                        </p>
+                    </ul>
+                    <li><h4>Dynamic / Private Ports (49152 – 65535) </h4></li>
+                    <ul>
+                        <p>These are the temporary side doors your computer uses when it talks to servers.</p>
+                        <ul>
+                            <li>Example: when you open google.com, your browser picks a random free port from this range just for that session.</li>
+                            <li>You never configure servers to use these – they’re chosen automatically by your system.</li>
+                        </ul>
+                    </ul>
+                </ol>
+        </ul>
+        <hr>
+        </div>
+        <div>
+            <h2>🌍 DNS – The Internet’s Phonebook</h2>
+            <ul>
+                <img src="Assets/img7.PNG" alt="DNS system diagram" width="400">
+                <p>
+                    Now imagine you want to call your friend “Rahul,” but instead of remembering his phone number, you just type his name in your phone. Easy, right?
+                </p>
+                <p>
+                    That’s exactly what DNS (Domain Name System) does. It converts human-friendly names like google.com into machine-friendly IP addresses like 142.250.72.206.
+                </p>
+                <p>
+                    Without DNS, we’d have to memorize numbers for every website 😵.
+                </p>
+                <hr>
+                <h3>How DNS Works (Step by Step)</h3>
+                <ol>
+                    <li><h4>Check if we already know it</h4></li>
+                    <ul>
+                        <li>First, your browser checks its own memory.</li>
+                        <li>If not there, your operating system checks its cache.</li>
+                        <li>If still not found, your router might have it saved.</li>
+                        <li>If found anywhere → done! ✅</li>
+                    </ul>
+                    <li><h4>Ask the Resolver (your ISP or Google DNS/Cloudflare)</h4></li>
+                    <ul>
+                        <p>
+                            If no one locally knows the answer, your computer asks a DNS Resolver. This is like calling a librarian who promises to find the exact number for you.
+                        </p>
+                    </ul>
+                    <li><h4>Resolver goes up the hierarchy</h4></li>
+                    <ul>
+                        <li>Root Servers: The resolver first asks, “Hey, who handles .com websites?”</li>
+                        <li>TLD Servers: Then it asks the .com servers, “Who knows about google.com?”</li>
+                        <li>Authoritative Servers: Finally, it reaches Google’s own servers, which reply: “Yes, google.com lives at 142.250.72.206.”</li>
+                    </ul>
+                    <li><h4>Answer comes back</h4></li>
+                    <ul>
+                        <li>Resolver caches the answer for some time (TTL).</li>
+                        <li>Sends the IP back to your computer.</li>
+                    </ul>
+                    <li><h4>Browser connects</h4></li>
+                    <ul>
+                        <p>
+                            Finally, your browser connects to 142.250.72.206 on port 443 (HTTPS) and loads the page. 🚀
+                        </p>
+                    </ul>
+                </ol>
+            </ul>
+            <hr>
+        </div>
+
+    </div>
+    <footer align="center">
+        <a href="Page2.html">Next ➡️</a>
+    </footer>
+</body>
+</html>

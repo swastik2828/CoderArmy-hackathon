@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Day 3 - Media Notes</title>
+</head>
+<body>
+  <h1>🎬 HTML Media</h1>
+
+  <h2>🌍 First Principle: The Web is More Than Text</h2>
+  <p>
+    Websites today are not just about static text and images. 
+    Modern webpages can directly include <strong>video</strong> and <strong>audio</strong> 
+    without relying on old plugins like Flash or QuickTime. 
+    HTML5 solved this with the <code>&lt;video&gt;</code> and <code>&lt;audio&gt;</code> tags.
+  </p>
+
+  <hr>
+
+  <h2>🎥 Part 1: The Video Tag</h2>
+  <p>
+    The <code>&lt;video&gt;</code> tag is used to embed videos. At its simplest:
+  </p>
+  <pre><code>&lt;video src="my-video.mp4"&gt;&lt;/video&gt;</code></pre>
+
+  <p>
+    But this just shows the first frame. To get proper controls (play, pause, volume, fullscreen), 
+    we add the <code>controls</code> attribute:
+  </p>
+  <pre><code>&lt;video src="my-video.mp4" controls&gt;&lt;/video&gt;</code></pre>
+
+  <h3>✨ Useful Video Attributes</h3>
+  <ul>
+    <li><strong>controls</strong> → Shows default player controls.</li>
+    <li><strong>width</strong> / <strong>height</strong> → Set video size.</li>
+    <li><strong>autoplay</strong> → Video starts automatically (usually requires <strong>muted</strong>).</li>
+    <li><strong>loop</strong> → Replays automatically when finished.</li>
+    <li><strong>poster</strong> → Thumbnail image before the video starts.</li>
+  </ul>
+
+  <hr>
+
+  <h2>🎵 Part 2: The Audio Tag</h2>
+  <p>
+    The <code>&lt;audio&gt;</code> tag works the same way as video but without visuals:
+  </p>
+  <pre><code>&lt;audio src="theme-song.mp3" controls&gt;&lt;/audio&gt;</code></pre>
+
+  <p>
+    It supports <code>autoplay</code>, <code>loop</code>, <code>muted</code> just like video.
+  </p>
+
+  <hr>
+
+  <h2>🛠️ Part 3: Professional Embedding</h2>
+
+  <h3>Problem 1: Different browsers support different formats</h3>
+  <p>
+    Example: Chrome supports <code>.webm</code>, Safari prefers <code>.mp4</code>.  
+    The solution is to provide multiple <code>&lt;source&gt;</code> options inside <code>&lt;video&gt;</code>.
+  </p>
+  <pre><code>&lt;video controls poster="thumbnail.jpg"&gt;
+  &lt;source src="my-video.webm" type="video/webm"&gt;
+  &lt;source src="my-video.mp4" type="video/mp4"&gt;
+  Sorry, your browser doesn't support videos.
+&lt;/video&gt;</code></pre>
+
+  <h3>Problem 2: Accessibility (Subtitles / Captions)</h3>
+  <p>
+    Use <code>&lt;track&gt;</code> to add subtitles or captions (stored in .vtt files).
+  </p>
+  <pre><code>&lt;video controls&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  &lt;track src="captions_en.vtt" kind="captions" srclang="en" label="English"&gt;
+  &lt;track src="subtitles_es.vtt" kind="subtitles" srclang="es" label="Español"&gt;
+&lt;/video&gt;</code></pre>
+
+  <p>
+    <strong>Kinds of tracks:</strong> captions (for hearing impaired), subtitles (translation), 
+    descriptions (for visually impaired).
+  </p>
+
+  <hr>
+
+  <h2>⚖️ Two Embedding Methods</h2>
+
+  <h3>1. Professional Method (with &lt;source&gt;)</h3>
+  <pre><code>&lt;video width="320" height="240" controls&gt;
+  &lt;source src="movie.mp4" type="video/mp4"&gt;
+  &lt;source src="movie.ogg" type="video/ogg"&gt;
+  Your browser does not support the video tag.
+&lt;/video&gt;</code></pre>
+
+  <ul>
+    <li><strong>Pros:</strong> Reliable, supports all browsers, includes fallback text.</li>
+    <li><strong>Cons:</strong> Requires multiple file formats.</li>
+  </ul>
+
+  <h3>2. Simple Method (with src attribute)</h3>
+  <pre><code>&lt;video src="a.mp4" controls&gt;&lt;/video&gt;</code></pre>
+
+  <ul>
+    <li><strong>Pros:</strong> Very easy to write.</li>
+    <li><strong>Cons:</strong> Works only if that one format is supported.</li>
+  </ul>
+
+  <h3>📊 Comparison Table</h3>
+  <table border="1" cellpadding="6">
+    <tr>
+      <th>Feature</th>
+      <th>Source Method</th>
+      <th>Src Method</th>
+    </tr>
+    <tr>
+      <td>Browser Compatibility</td>
+      <td>Excellent</td>
+      <td>Not Guaranteed</td>
+    </tr>
+    <tr>
+      <td>Flexibility</td>
+      <td>High</td>
+      <td>Low</td>
+    </tr>
+    <tr>
+      <td>Simplicity</td>
+      <td>More Complex</td>
+      <td>Very Simple</td>
+    </tr>
+    <tr>
+      <td>Fallback</td>
+      <td>Yes</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Best Use Case</td>
+      <td>Public Websites</td>
+      <td>Quick Tests</td>
+    </tr>
+  </table>
+
+  <hr>
+
+  <h2>© Symbols & Entities</h2>
+  <p>Sometimes we need to display special characters. We use HTML entities:</p>
+
+  <ul>
+    <li>Copyright → <code>&amp;copy;</code> → ©</li>
+    <li>Registered Trademark → <code>&amp;reg;</code> → ®</li>
+    <li>Trademark → <code>&amp;trade;</code> → ™</li>
+    <li>Less than → <code>&amp;lt;</code> → &lt;</li>
+    <li>Greater than → <code>&amp;gt;</code> → &gt;</li>
+    <li>Ampersand → <code>&amp;amp;</code> → &amp;</li>
+    <li>Double Quote → <code>&amp;quot;</code> → "</li>
+    <li>Euro Sign → <code>&amp;euro;</code> → €</li>
+  </ul>
+
+  <p>
+    Example footer usage: <br>
+    <code>&lt;p&gt;Copyright &amp;copy; 2024 My Website&lt;/p&gt;</code>
+  </p>
+
+  <footer>
+    <p align="center">
+            <a href="Page5.html">⬅️ Previous</a> |
+        </p>
+  </footer>
+</body>
+</html>
